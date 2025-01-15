@@ -4,3 +4,4 @@
 4. Create all the components inside components folder: Header, Hero, BookList, BookAdd, BookSingle, ModeToggle
 5. Install shadcn from its website
 6. Dark mode support (follow docs)
+7. Add Background Boxes from aceternity
