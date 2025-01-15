@@ -19,7 +19,7 @@ function BookAdd() {
 
   return (
     <form
-      className="max-w-96 flex flex-col gap-1 mx-auto px-2 mb-10"
+      className="max-w-96 flex flex-col gap-1 mx-auto px-2 my-10"
       onSubmit={handleSubmit}
     >
       <Input
