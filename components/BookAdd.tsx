@@ -1,16 +1,20 @@
-import { FormEvent, useState } from "react";
+import { Dispatch, FormEvent, useState } from "react";
 
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 
-function BookAdd() {
+interface BookAddProps {
+  dispatch: Dispatch<Action>;
+}
+
+function BookAdd({ dispatch }: BookAddProps) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    console.log(title, author);
+    dispatch({ type: "add", payload: { author, title } });
 
     // Empty the fields
     setAuthor("");
@@ -37,7 +41,11 @@ function BookAdd() {
         required
       />
       <div className="flex gap-1">
-        <Button type="button" variant="secondary">
+        <Button
+          type="button"
+          variant="secondary"
+          onClick={() => dispatch({ type: "sort" })}
+        >
           Sort
         </Button>
         <Button type="submit">Add</Button>
